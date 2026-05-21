@@ -1,3 +1,98 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# ─── Virtual Environments ─────────────────────────────────────────────────────
+.venv/
+venv/
+ENV/
+env/
+
+# ─── Build & Distribution ─────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+
+# ─── Type & Lint Caches ───────────────────────────────────────────────────────
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# ─── Test & Coverage ──────────────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# ─── OmniForge Runtime Directories (user data, ephemeral) ────────────────────
+exports/
+temp/
+data/
+
+# Keep directory stubs tracked
+!exports/.gitkeep
+!temp/.gitkeep
+!data/.gitkeep
+
+# ─── Bundled Binaries (large platform-specific assets) ────────────────────────
+bundled/windows/
+bundled/linux/
+bundled/darwin/
+
+# ─── OmniForge Encrypted Files ────────────────────────────────────────────────
+*.omfenc
+*.omf-backup-*
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Environment & Secrets ────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+# .env.example is intentionally NOT ignored
+
+# ─── IDE & Editor ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.sublime-workspace
+*.sublime-project
+
+# ─── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ─── Windows ──────────────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Project Documents (design artifacts, not source) ────────────────────────
+*.docx
+*.doc
+docs/rfcs/drafts/
+
+# ─── Personal Tracking & Local Tools ─────────────────────────────────────────
+FEATURES.md
+*.skill
+
+# ─── PyInstaller ──────────────────────────────────────────────────────────────
+# Keep .spec files tracked — they are part of the build config
+*.manifest
+
+# ─── rembg ML Model Cache ─────────────────────────────────────────────────────
+# Models are large; bundle separately or download on first use
+u2net*.onnx
 *.onnx
 
 # ─── Node (NiceGUI dev tooling if any) ────────────────────────────────────────
