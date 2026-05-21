@@ -1,0 +1,4 @@
+*.onnx
+
+# ─── Node (NiceGUI dev tooling if any) ────────────────────────────────────────
+node_modules/

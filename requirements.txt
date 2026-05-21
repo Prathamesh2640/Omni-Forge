@@ -1,0 +1,71 @@
+# OmniForge — Production Dependencies
+# Python >= 3.11 required
+# Install: pip install -r requirements.txt
+
+# ─── Core Framework ───────────────────────────────────────────────────────────
+nicegui>=2.5.0
+uvicorn>=0.32.0
+pydantic>=2.9.0
+
+# ─── State & Storage ──────────────────────────────────────────────────────────
+tinydb>=4.8.0
+
+# ─── System ───────────────────────────────────────────────────────────────────
+psutil>=6.1.0
+keyring>=25.4.0
+pyperclip>=1.9.0
+plyer>=2.1.0
+
+# ─── PDF Suite ────────────────────────────────────────────────────────────────
+PyMuPDF>=1.25.0
+pdf2docx>=0.5.8
+reportlab>=4.2.0
+
+# ─── OCR ──────────────────────────────────────────────────────────────────────
+pytesseract>=0.3.13
+Pillow>=11.0.0
+pillow-heif>=0.16.0
+
+# ─── Document Conversion ──────────────────────────────────────────────────────
+# pypandoc-binary bundles Pandoc — no separate system install needed
+pypandoc-binary>=1.14
+mistune>=3.1.0
+pygments>=2.18.0
+
+# ─── Image Processing ─────────────────────────────────────────────────────────
+rembg>=2.0.58
+# cairosvg replaced by svglib+reportlab (no libcairo system dep on Windows)
+svglib>=1.5.1
+
+# ─── Video & Audio ────────────────────────────────────────────────────────────
+ffmpeg-python>=0.2.0
+
+# ─── File Utilities ───────────────────────────────────────────────────────────
+xxhash>=3.5.0
+pathspec>=0.12.0
+
+# ─── Network ──────────────────────────────────────────────────────────────────
+scapy>=2.6.0
+
+# ─── Security & Cryptography ──────────────────────────────────────────────────
+cryptography>=44.0.0
+detect-secrets>=1.5.0
+
+# ─── Data ─────────────────────────────────────────────────────────────────────
+openpyxl>=3.1.5
+pandas>=2.2.0
+
+# ─── Android ──────────────────────────────────────────────────────────────────
+# pure-python-adb replaced by adbutils — actively maintained, typed, supports
+# Android 11+ wireless pairing and split APK installs
+adbutils>=2.0.0
+
+# ─── DevOps ───────────────────────────────────────────────────────────────────
+docker>=7.1.0
+paramiko>=3.5.0
+
+# ─── LLM Context Packager ─────────────────────────────────────────────────────
+tiktoken>=0.8.0
+
+# ─── Python Tools ─────────────────────────────────────────────────────────────
+vulture>=2.13
