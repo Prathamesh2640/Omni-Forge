@@ -1,0 +1,17 @@
+{
+  "name": "Duplicate Detective",
+  "id": "extractors.duplicate_finder",
+  "version": "1.0.0",
+  "description": "Find files with identical content by size then hash, and delete all but one copy per group.",
+  "author": "OmniForge Team",
+  "pillar": "extractors",
+  "tier": "v1",
+  "icon": "assets/icons/duplicate_finder.svg",
+  "tags": ["duplicate", "dedupe", "hash", "cleanup", "disk space", "files"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": [],
+  "pip_dependencies": ["xxhash", "pathspec"],
+  "disabled_on": [],
+  "experimental": false
+}

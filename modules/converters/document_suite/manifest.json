@@ -1,0 +1,17 @@
+{
+  "name": "Document Suite",
+  "id": "converters.document_suite",
+  "version": "1.0.0",
+  "description": "Convert between Markdown, HTML, JSON, YAML, CSV and Excel entirely offline.",
+  "author": "OmniForge Team",
+  "pillar": "converters",
+  "tier": "v1",
+  "icon": "assets/icons/document_suite.svg",
+  "tags": ["markdown", "html", "json", "yaml", "csv", "excel", "convert", "document"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": [],
+  "pip_dependencies": ["mistune", "pygments", "markdownify", "openpyxl", "PyYAML"],
+  "disabled_on": [],
+  "experimental": false
+}

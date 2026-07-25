@@ -1,71 +1,58 @@
-# OmniForge — Production Dependencies
+# OmniForge V1 — Production Dependencies
 # Python >= 3.11 required
 # Install: pip install -r requirements.txt
+#
+# V1 = "Offline Developer File Toolkit": Converters + Extractors only. Only
+# packages a shipped V1 module (or the core/shared kernel) actually imports live
+# here. Dependencies for the parked V2 (System) and V3 (Security) tiers, and for
+# deferred V1 converter features, are in requirements-optional.txt.
 
 # ─── Core Framework ───────────────────────────────────────────────────────────
 nicegui>=2.5.0
 uvicorn>=0.32.0
 pydantic>=2.9.0
+# Backs NiceGUI's native=True desktop window. On Windows it renders through
+# the WebView2 Runtime; dependency_checker.py validates both at startup.
+pywebview>=5.3
 
 # ─── State & Storage ──────────────────────────────────────────────────────────
 tinydb>=4.8.0
 
-# ─── System ───────────────────────────────────────────────────────────────────
+# ─── Process & Platform (core/shared kernel infrastructure) ───────────────────
+# Not owned by any one module: core.single_instance uses it for stale-lock
+# detection, shared.process_guard for sandbox self-inspection, and the shared
+# directory picker for disk-partition roots.
 psutil>=6.1.0
-keyring>=25.4.0
-pyperclip>=1.9.0
-plyer>=2.1.0
 
 # ─── PDF Suite ────────────────────────────────────────────────────────────────
 PyMuPDF>=1.25.0
 pdf2docx>=0.5.8
 reportlab>=4.2.0
 
-# ─── OCR ──────────────────────────────────────────────────────────────────────
-pytesseract>=0.3.13
+# ─── Imaging (image_suite) ────────────────────────────────────────────────────
 Pillow>=11.0.0
 pillow-heif>=0.16.0
-
-# ─── Document Conversion ──────────────────────────────────────────────────────
-# pypandoc-binary bundles Pandoc — no separate system install needed
-pypandoc-binary>=1.14
-mistune>=3.1.0
-pygments>=2.18.0
-
-# ─── Image Processing ─────────────────────────────────────────────────────────
-rembg>=2.0.58
-# cairosvg replaced by svglib+reportlab (no libcairo system dep on Windows)
+# SVG rasterisation. cairosvg replaced by svglib+reportlab (no libcairo system
+# dependency on Windows); the PDF it produces is rendered to PNG by PyMuPDF.
 svglib>=1.5.1
 
-# ─── Video & Audio ────────────────────────────────────────────────────────────
-ffmpeg-python>=0.2.0
+# ─── Document Conversion (document_suite) ─────────────────────────────────────
+mistune>=3.1.0
+pygments>=2.18.0
+# HTML -> Markdown. Pure Python, no system dependency.
+markdownify>=0.13
+beautifulsoup4>=4.12.0
+PyYAML>=6.0
+# JSON -> Excel.
+openpyxl>=3.1.5
 
-# ─── File Utilities ───────────────────────────────────────────────────────────
+# ─── Video & Audio (media_suite) ──────────────────────────────────────────────
+# media_suite invokes the FFmpeg binary directly; there is no Python package to
+# install for it. Dependency guidance is shown in-app when it is absent (B-06).
+
+# ─── File Utilities (file_filter, duplicate_finder, bulk_renamer) ─────────────
 xxhash>=3.5.0
 pathspec>=0.12.0
 
-# ─── Network ──────────────────────────────────────────────────────────────────
-scapy>=2.6.0
-
-# ─── Security & Cryptography ──────────────────────────────────────────────────
-cryptography>=44.0.0
-detect-secrets>=1.5.0
-
-# ─── Data ─────────────────────────────────────────────────────────────────────
-openpyxl>=3.1.5
-pandas>=2.2.0
-
-# ─── Android ──────────────────────────────────────────────────────────────────
-# pure-python-adb replaced by adbutils — actively maintained, typed, supports
-# Android 11+ wireless pairing and split APK installs
-adbutils>=2.0.0
-
-# ─── DevOps ───────────────────────────────────────────────────────────────────
-docker>=7.1.0
-paramiko>=3.5.0
-
-# ─── LLM Context Packager ─────────────────────────────────────────────────────
+# ─── LLM Context Packager (llm_packager — the V1 flagship) ────────────────────
 tiktoken>=0.8.0
-
-# ─── Python Tools ─────────────────────────────────────────────────────────────
-vulture>=2.13

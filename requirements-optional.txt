@@ -1,0 +1,41 @@
+# OmniForge — Optional / Parked-Tier Dependencies
+# Install: pip install -r requirements-optional.txt
+#
+# Nothing in requirements.txt is listed here, and nothing here is imported by
+# any shipped V1 module. These are kept separate so a normal V1 install does not
+# pull dependencies for features that are parked or not yet built.
+#
+# Each entry records which tier/feature will need it, so it is obvious what to
+# move back into requirements.txt when that work ships.
+
+# ─── Deferred V1 converter features (Converters pillar, not yet built) ────────
+# PDF OCR (pdf_suite) and image OCR. Also needs the Tesseract binary itself.
+pytesseract>=0.3.13
+# Markdown -> DOCX/PDF for document_suite. Bundles Pandoc, so it is large.
+pypandoc-binary>=1.14
+# Only referenced through FFmpeg's command line today; media_suite shells out
+# to the binary directly rather than using this wrapper.
+ffmpeg-python>=0.2.0
+
+# ─── V2 — System tier (modules archived under _deferred/system_matrix) ────────
+# cache_purger measures and prunes Docker's build cache through this SDK.
+# psutil, the other System dependency, already ships in requirements.txt because
+# the core/shared kernel needs it.
+docker>=7.1.0
+
+# ─── V3 — Security tier (modules archived under _deferred/network_vault) ──────
+# crypto_toolkit — AES-256-GCM .omfenc, hashing, key generation.
+cryptography>=44.0.0
+# crypto_toolkit — only to passphrase-protect generated OpenSSH private keys.
+bcrypt>=4.0.0
+# secret_scanner — credential detection.
+detect-secrets>=1.5.0
+# web_dev_tools — JSON Schema validation.
+jsonschema>=4.20.0
+# network_scanner — ARP sweep. Also needs the Npcap driver on Windows.
+scapy>=2.6.0
+
+# ─── Deferred hardening: encrypted settings (rule C-07) ───────────────────────
+# Sensitive settings fields are to be encrypted via the OS keyring before they
+# reach TinyDB. Not yet implemented — no V1 module stores a credential today.
+keyring>=25.4.0

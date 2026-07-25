@@ -1,0 +1,17 @@
+{
+  "name": "Bulk Regex Renamer",
+  "id": "extractors.bulk_renamer",
+  "version": "1.0.0",
+  "description": "Rename many files at once with a regular expression, previewed before anything changes.",
+  "author": "OmniForge Team",
+  "pillar": "extractors",
+  "tier": "v1",
+  "icon": "assets/icons/bulk_renamer.svg",
+  "tags": ["rename", "regex", "batch", "files"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": [],
+  "pip_dependencies": ["pathspec"],
+  "disabled_on": [],
+  "experimental": false
+}

@@ -1,0 +1,64 @@
+[project]
+name = "omniforge"
+version = "1.0.0"
+description = "OmniForge V1 — an offline, cross-platform developer file toolkit (Converters + Extractors)"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP", "RUF"]
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["core", "shared", "ui", "modules"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+exclude = ["tests/", ".venv/", "build/", "dist/", "_deferred/"]
+# nicegui stubs are incomplete — suppress missing-imports for it only
+[[tool.mypy.overrides]]
+module = [
+    "nicegui.*",
+    "tinydb.*",
+    "psutil.*",
+    "tiktoken.*",
+    "pathspec.*",
+    "fitz.*",
+    "pdf2docx.*",
+    "webview.*",
+    # reportlab and svglib ship no stubs; only their drawing entry points are
+    # used, and the results are verified by tests that reopen the output.
+    "reportlab.*",
+    "svglib.*",
+    "pillow_heif.*",
+    "markdownify.*",
+    "mistune.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["core", "shared", "modules"]
+addopts = "--tb=short -q"
+
+[tool.coverage.run]
+source = ["core", "shared", "modules"]
+omit = [
+    "*/tests/*",
+    "*/__init__.py",
+    # Presentation layers are declarative NiceGUI markup with no branching
+    # logic to assert on; they are verified by the manual GUI checks recorded
+    # in FEATURES.md, not by pytest. Everything they call — logic.py, the
+    # shared helpers, the core kernel — is measured normally.
+    "*/ui.py",
+    "shared/ui_components.py",
+    "ui/shell.py",
+]
+
+[tool.coverage.report]
+fail_under = 80

@@ -1,0 +1,17 @@
+{
+  "name": "Image Suite",
+  "id": "converters.image_suite",
+  "version": "1.0.0",
+  "description": "Convert, compress, resize and sanitise images, and turn SVGs into Android and web assets.",
+  "author": "OmniForge Team",
+  "pillar": "converters",
+  "tier": "v1",
+  "icon": "assets/icons/image_suite.svg",
+  "tags": ["image", "heic", "webp", "compress", "resize", "exif", "svg", "favicon", "android"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": [],
+  "pip_dependencies": ["Pillow", "pillow-heif", "svglib", "reportlab", "PyMuPDF"],
+  "disabled_on": [],
+  "experimental": false
+}

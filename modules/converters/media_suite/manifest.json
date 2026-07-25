@@ -1,0 +1,17 @@
+{
+  "name": "Media Suite",
+  "id": "converters.media_suite",
+  "version": "1.0.0",
+  "description": "Compress video to a target size, extract audio, convert to MP4, grab thumbnails and normalise loudness.",
+  "author": "OmniForge Team",
+  "pillar": "converters",
+  "tier": "v1",
+  "icon": "assets/icons/media_suite.svg",
+  "tags": ["video", "audio", "ffmpeg", "compress", "mp4", "mp3", "thumbnail", "loudness"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": ["ffmpeg", "ffprobe"],
+  "pip_dependencies": [],
+  "disabled_on": [],
+  "experimental": false
+}

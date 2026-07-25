@@ -31,6 +31,12 @@ htmlcov/
 coverage.xml
 *.cover
 
+# ─── Deferred / Parked Modules (V2 System, V3 Security — not part of V1) ──────
+# system_matrix and network_vault are built and tested but out of V1 scope.
+# Archived here so the V1 tree stays single-purpose; re-integrate when their
+# version ships. Excluded from ruff/mypy/pytest via pyproject.toml.
+_deferred/
+
 # ─── OmniForge Runtime Directories (user data, ephemeral) ────────────────────
 exports/
 temp/
@@ -90,10 +96,10 @@ FEATURES.md
 # Keep .spec files tracked — they are part of the build config
 *.manifest
 
-# ─── rembg ML Model Cache ─────────────────────────────────────────────────────
-# Models are large; bundle separately or download on first use
-u2net*.onnx
-*.onnx
-
 # ─── Node (NiceGUI dev tooling if any) ────────────────────────────────────────
 node_modules/
+
+# Stray media produced by ad-hoc media_suite runs at the repo root.
+/*.mp4
+/*.mkv
+/*.webm

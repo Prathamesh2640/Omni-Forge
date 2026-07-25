@@ -1,0 +1,17 @@
+{
+  "name": "LLM Packager",
+  "id": "extractors.llm_packager",
+  "version": "1.0.0",
+  "description": "Pack a codebase into a single LLM-ready context file with token counting.",
+  "author": "OmniForge Team",
+  "pillar": "extractors",
+  "tier": "v1",
+  "icon": "assets/icons/llm_packager.svg",
+  "tags": ["llm", "context", "tokens", "codebase", "pack", "ai"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": [],
+  "pip_dependencies": ["tiktoken", "pathspec"],
+  "disabled_on": [],
+  "experimental": false
+}

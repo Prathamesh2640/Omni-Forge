@@ -6,6 +6,12 @@
 ruff>=0.8.0
 mypy>=1.13.0
 
+# Type stubs for third-party libraries used by the modules, so mypy --strict
+# checks them properly rather than treating them as Any.
+types-PyYAML>=6.0
+types-openpyxl>=3.1
+types-Pygments>=2.18
+
 # ─── Testing ──────────────────────────────────────────────────────────────────
 pytest>=8.3.0
 pytest-cov>=6.0.0

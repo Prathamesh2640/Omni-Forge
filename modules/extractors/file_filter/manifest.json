@@ -1,0 +1,17 @@
+{
+  "name": "File Filter",
+  "id": "extractors.file_filter",
+  "version": "1.0.0",
+  "description": "Scan a tree, see what file types it holds, and extract the ones you want by copy, move, zip or manifest.",
+  "author": "OmniForge Team",
+  "pillar": "extractors",
+  "tier": "v1",
+  "icon": "assets/icons/file_filter.svg",
+  "tags": ["filter", "extract", "extension", "copy", "move", "zip", "manifest", "files"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": [],
+  "pip_dependencies": ["pathspec"],
+  "disabled_on": [],
+  "experimental": false
+}

@@ -1,0 +1,17 @@
+{
+  "name": "PDF Suite",
+  "id": "converters.pdf_suite",
+  "version": "1.0.0",
+  "description": "Merge, split, compress, unlock, rotate and convert PDF documents entirely offline.",
+  "author": "OmniForge Team",
+  "pillar": "converters",
+  "tier": "v1",
+  "icon": "assets/icons/pdf_suite.svg",
+  "tags": ["pdf", "merge", "split", "compress", "ocr", "docx", "convert", "document"],
+  "min_python_version": "3.11",
+  "requires_elevation": false,
+  "external_binaries": [],
+  "pip_dependencies": ["PyMuPDF", "pdf2docx"],
+  "disabled_on": [],
+  "experimental": false
+}
